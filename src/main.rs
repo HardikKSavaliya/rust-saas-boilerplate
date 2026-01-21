@@ -1,13 +1,14 @@
 use anyhow::Result;
-use std::net::SocketAddr;
 use tokio::signal;
 use tracing::{info, Level};
 use tracing_subscriber::fmt;
 
 mod app;
 mod modules;
+mod config;
 
 use app::rust_saas;
+use config::AppConfig;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -16,9 +17,12 @@ async fn main() -> Result<()> {
         .with_max_level(Level::INFO)
         .init();
 
+    // Load configuration from environment variables
+    let config = AppConfig::from_env();
+    let addr = config.server_addr();
+
     let app = rust_saas();
 
-    let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
     info!("🚀 Server starting on http://{}", addr);
 
     let listener = tokio::net::TcpListener::bind(addr).await?;
@@ -26,7 +30,6 @@ async fn main() -> Result<()> {
     // Create shutdown signal
     let shutdown = shutdown_signal();
     
-    info!("Server listening on http://{}", addr);
     info!("Press Ctrl+C to shutdown gracefully");
     
     // Start server with graceful shutdown
