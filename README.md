@@ -60,7 +60,7 @@ Each module follows:
 | Web        | Axum         |
 | Runtime    | Tokio        |
 | Database   | PostgreSQL   |
-| ORM        | SQLx         |
+| ORM        | SeaORM       |
 | Auth       | JWT + Argon2 |
 | Billing    | Stripe       |
 | Logging    | tracing      |
