@@ -10,8 +10,8 @@ This document tracks development progress for building a **production-grade SaaS
 - [x] Project scaffolding
 - [x] Axum server bootstrap
 - [x] Structured logging (tracing)
-- [ ] Environment config loading
-- [ ] Error handling layer
+- [x] Environment config loading
+- [x] Error handling layer
 - [x] Health check
 
 ### Auth & Users

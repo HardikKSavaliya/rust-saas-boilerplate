@@ -6,6 +6,7 @@ use tracing_subscriber::fmt;
 mod app;
 mod modules;
 mod config;
+mod error;
 
 use app::rust_saas;
 use config::AppConfig;
