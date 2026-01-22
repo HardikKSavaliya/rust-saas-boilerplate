@@ -80,7 +80,7 @@ This document tracks development progress for building a **production-grade SaaS
 - [ ] Docker production build
 - [ ] Fly.io deployment config
 - [ ] Railway deployment config
-- [ ] GitHub Actions CI
+- [x] GitHub Actions CI
 - [ ] Automated migrations on deploy
 - [ ] Prometheus metrics
 - [ ] Health + readiness probes

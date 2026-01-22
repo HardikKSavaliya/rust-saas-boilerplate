@@ -25,3 +25,7 @@ thiserror = "2.0.18"
 # For .env support
 dotenvy = "0.15.7"
 config = "0.15.19"
+
+# Development dependencies
+[dev-dependencies]
+# Add test dependencies here if needed
