@@ -6,7 +6,7 @@ authors = ["Your Name <you@example.com>"]
 description = "Production-grade Rust SaaS boilerplate - A complete starter template for building SaaS applications with authentication, user management, and more"
 license = "MIT"
 repository = "https://github.com/HardikKSavaliya/rust-saas-backend"
-keywords = ["saas", "boilerplate", "starter", "template", "backend", "api", "axum", "rust"]
+keywords = ["saas", "boilerplate", "starter", "template", "backend"]
 categories = ["web-programming", "authentication", "template"]
 
 [lib]
