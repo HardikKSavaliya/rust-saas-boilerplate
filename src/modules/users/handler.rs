@@ -85,10 +85,7 @@ pub async fn get_user(
         .one(&state.db)
         .await
         .map_err(AppError::from)?
-        .ok_or(AppError::NotFound(format!(
-            "User with id {} not found",
-            id
-        )))?;
+        .ok_or(AppError::NotFound(format!("User with id {} not found", id)))?;
 
     Ok(Json(UserResponse::from(user)))
 }
@@ -103,10 +100,7 @@ pub async fn update_user(
         .one(&state.db)
         .await
         .map_err(AppError::from)?
-        .ok_or(AppError::NotFound(format!(
-            "User with id {} not found",
-            id
-        )))?;
+        .ok_or(AppError::NotFound(format!("User with id {} not found", id)))?;
 
     let mut user: entity::ActiveModel = user.into();
 
@@ -136,10 +130,7 @@ pub async fn delete_user(
         .map_err(AppError::from)?;
 
     if result.rows_affected == 0 {
-        return Err(AppError::NotFound(format!(
-            "User with id {} not found",
-            id
-        )));
+        return Err(AppError::NotFound(format!("User with id {} not found", id)));
     }
 
     Ok(StatusCode::NO_CONTENT)
